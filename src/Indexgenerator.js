@@ -9,7 +9,7 @@ const Manager = require("../dist/Manager")
 
 function Indexgenerator(staffmemberdata) {
 
-    return `
+    return  `
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,22 +33,28 @@ ${cardgenerator(staffmemberdata)}
 function cardgenerator(staffmemberdata) {
     // Loop threw my array of each member of the array create a card. creat a for loop and return this string. ${staffmemeberdata} console.log(staffmemberdata) Need to generate a function in each class for when building  
 
-    
-    
-    
+   console.log(staffmemberdata)
+    var cards = ""
     for (var i = 0; i < staffmemberdata.length; i++) {
-    return `
-    <div class="card" style="width: 18rem;">
-    <div class="card-header">
-    ${staffmemberdata[i].getName()}
+      cards += `
+      <div class="container">
+      <div class="row">
+        <div class="card-deck">
+          <div class="card" style="width: 18rem;">
+            <div class="card-header" style="background-color: #1EFFF0; color: black;">
+            ${staffmemberdata[i].getName()}
+            </div>
+            ${staffmemberdata[i].rendercardcontents()}
+            </ul>
+          </div>   
+        </div>
+      </div>
     </div>
-    <ul class="list-group list-group-flush">
-    ${staffmemberdata[i].rendercardcontents()}
-    </ul>
-  </div>
     `
+    
     }
 
+    return cards
 
 
     console.log(staffmemberdata)
