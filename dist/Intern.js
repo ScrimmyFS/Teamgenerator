@@ -1,22 +1,23 @@
 const Employee = require('./Employee')
 
-class Intern extends Employee{
-    constructor(name, id, email, school){
+class Intern extends Employee {
+    constructor(name, id, email, school) {
         super(name, id, email)
         this.school = school
     }
-    getRole(){
+    getRole() {
         return 'Intern'
     }
-    getSchool () {
+    getSchool() {
         return this.school
     }
 
-    rendercardcontents(){
-        return `<p>${this.getRole()}</p> 
-                <p>${this.id}</p>
-                <p>${this.school}</p>`
-     }
+    rendercardcontents() {
+        return `<li class="list-group-item">"Role: ${this.getRole()}"</li> 
+                <li class="list-group-item">"ID: ${this.id}"</li>
+                <li class="list-group-item">"Email: ${this.email}"</li>
+                <li class="list-group-item">"University: ${this.school}"</li>`
+    }
 }
 
 module.exports = Intern

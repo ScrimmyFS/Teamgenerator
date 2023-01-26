@@ -12,12 +12,12 @@ getName() {
 }
 
 getId() {
-    return this.id
+    return 'Id: ${this.id}'
 }
 
 
 getEmail() {
-    return this.email
+    return 'Email ${this.email}'
 }
 
 
@@ -26,10 +26,10 @@ getRole() {
 }
 
 rendercardcontents(){
-    return `<p>${this.getRole()}</p> 
-            <p>${this.id}</p>
-            <p>${this.email}</p>
-            <p>${this.github}</p>`
+    return `<li class="list-group-item">"Role: ${this.getRole()}"</li>
+    <li class="list-group-item">"ID: ${this.id}"</li>
+    <li class="list-group-item">"Email: ${this.email}"</li>
+    <li class="list-group-item">"Github: ${this.github}"</li>`
  }
 }
 

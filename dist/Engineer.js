@@ -8,18 +8,19 @@ class Engineer extends Employee{
     }
 
     getRole(){
-        return 'Engineer'}
+        return 'Engineer'
+    }
 
     getGithub(){
-        return this.github
+        return 'GitHub: ${this.github}'
     }
 
     rendercardcontents(){
        return `
-               <p>${this.getRole()}</p> 
-               <p>${this.id}</p>
-               <p>${this.email}</p>
-               <p>${this.github}</p>`
+       <li class="list-group-item">"Role: ${this.getRole()}"</li> 
+       <li class="list-group-item">"ID: ${this.id}"</li>
+       <li class="list-group-item">"Email: ${this.email}"</li>
+       <li class="list-group-item">"GitHub: ${this.github}"</li>`
     }
 
 }

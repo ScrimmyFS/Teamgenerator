@@ -17,11 +17,14 @@ function Indexgenerator(staffmemberdata) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href=".lib/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./lib/style.css">
     <title>Team Page</title>
 </head>
-<body>
+
+<header class="header"><p>Our Team</p></header>
+
+<body class="Teambox">
 ${cardgenerator(staffmemberdata)}
 </body>
 `
@@ -30,23 +33,20 @@ ${cardgenerator(staffmemberdata)}
 function cardgenerator(staffmemberdata) {
     // Loop threw my array of each member of the array create a card. creat a for loop and return this string. ${staffmemeberdata} console.log(staffmemberdata) Need to generate a function in each class for when building  
 
-    console.log(staffmemberdata)
-
-
+    
+    
+    
     for (var i = 0; i < staffmemberdata.length; i++) {
-        console.log(staffmemberdata[i])
-
     return `
-        <div class="col s12 m7">
-            <h2 class="header">${staffmemberdata[i].getName()}</h2>
-            <div class="card horizontal">
-            </div>
-            <div class="card-stacked">
-                <div class="card-content">
-                    ${staffmemberdata[i].rendercardcontents()}
-                </div>
-            </div>
-        </div>`
+    <div class="card" style="width: 18rem;">
+    <div class="card-header">
+    ${staffmemberdata[i].getName()}
+    </div>
+    <ul class="list-group list-group-flush">
+    ${staffmemberdata[i].rendercardcontents()}
+    </ul>
+  </div>
+    `
     }
 
 
